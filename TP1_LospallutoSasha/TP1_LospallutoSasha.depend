@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1554489166 source:c:\users\sashaoriana\documents\laboratorio1\tp1_lospallutosasha\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	"Funciones_Validaciones.h"
+	"function.h"
+	"funciones.h"
+
+1554489420 source:c:\users\sashaoriana\documents\laboratorio1\tp1_lospallutosasha\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Funciones_Validaciones.h"
+	"function.h"
+	"funciones.h"
+
+1554489422 c:\users\sashaoriana\documents\laboratorio1\tp1_lospallutosasha\funciones.h
+
+1554486952 c:\users\sashaoriana\documents\laboratorio1\tp1_lospallutosasha\funciones_validaciones.h
+
+1554484591 c:\users\sashaoriana\documents\laboratorio1\tp1_lospallutosasha\function.h
+
+1554486921 source:c:\users\sashaoriana\documents\laboratorio1\tp1_lospallutosasha\funciones_validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"Funciones_Validaciones.h"
+	"function.h"
+	"funciones.h"
+
+1554482854 source:c:\users\sashaoriana\documents\laboratorio1\tp1_lospallutosasha\function.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"function.h"
+	"funciones.h"
+
