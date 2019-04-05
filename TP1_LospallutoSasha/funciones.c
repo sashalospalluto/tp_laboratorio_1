@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Funciones_Validaciones.h"
-#include "function.h"
+#include <ctype.h>
 #include "funciones.h"
 
 void funcionSuma (float num1, float num2, float* suma)
@@ -45,7 +44,7 @@ int funcionDividir (float num1, float num2, float* dividir)
 
 }
 
-void funcionFactorial (float* num, unsigned long long int* factorial)
+void funcionFactorial (float* num, unsigned long int* factorial)
 {
     int factorialFunc=1;
     int numero=(*num);
@@ -69,16 +68,90 @@ void funcionFactorial (float* num, unsigned long long int* factorial)
     }
 }
 
-void funcionMostrarFactorial(float num,unsigned long long int factorial)
+void funcionMostrarFactorial(float num,unsigned long int factorial)
 {
     if(factorial==-1)
     {
         printf("el numero %.2f no se puede factorear. ",num);
     }else
     {
-        printf("el factorial de %.2f es: %llu .",num,factorial);
+        printf("el factorial de %.2f es: %lu .",num,factorial);
     }
 }
 
+int utn_getNumero(float* pResultado,const char *mensaje,const char *mensajeError,int minimo,int maximo,int reintentos)
+{
+    int ret;
+    float num;
+
+    while (reintentos>0)
+    {
+        printf("%s",mensaje);
+
+        if (getFloat(&num)==0)
+        {
+            if (num<=maximo && num>=minimo)
+            {
+                break;
+            }
+        }
+                //__fpurge(stdin);
+                reintentos--;
+
+                if(reintentos==0)
+                {
+                    printf("NO HAY MAS INTENTOS");
+                }
+                else
+                {
+                    printf("%s\n",mensajeError);
+                }
+
+    }
+    if(reintentos==0)
+    {
+        ret=-1;
+    }else
+        {
+            ret=0;
+            *pResultado = num;
+        }
+    return ret;
+}
+
+int getFloat(float *pResultado)
+{
+    int ret=-1;
+    char buffer[64];
+    scanf("%s",buffer);
+
+    ret=validarNumero(buffer);
+
+    if(ret==0)
+    {
+        *pResultado = atof(buffer);
+    }
+
+
+    return ret;
+}
+
+int validarNumero (char* numero)
+{
+    int ret=-1;
+    int i=0;
+    while(*(numero)+i!='\o')
+    {
+        if (isdigit ((*numero)+i))
+        {
+            ret=0;
+        }else
+        {
+            break;
+        }
+        i++;
+    }
+    return ret;
+}
 
 

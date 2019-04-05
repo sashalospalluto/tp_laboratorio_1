@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Funciones_Validaciones.h"
-#include "function.h"
 #include "funciones.h"
 
 int main()
@@ -14,8 +12,8 @@ int main()
     float resta;
     float division;
     float multiplicacion;
-    unsigned long long int factorialA;
-    unsigned long long int factorialB;
+    unsigned long int factorialA;
+    unsigned long int factorialB;
     int resultadoDivision; //resultado de la funcion "funcionDividir"
     int auxCase1;
     int auxCase2;
@@ -41,18 +39,14 @@ int main()
                 {
                 case 1:
                     system("cls");
-                    printf("Ingrese el primer operando: ");
-                    scanf("%f",&numeroA);
-                    auxCase1=1;
+                    auxCase1=utn_getNumero(&numeroA, "\ningrese el primer operando: ", "no es un numero, vuelva a intentar",-32768,32767,3);
                     break;
                 case 2:
                     system("cls");
-                    printf("Ingrese el segundo operando: ");
-                    scanf("%f",&numeroB);
-                    auxCase2=1;
+                    auxCase2=utn_getNumero(&numeroB, "\ningrese el primer operando: ", "no es un numero, vuelva a intentar",-32768,32767,3);
                     break;
                 case 3:
-                    if (auxCase1==1 && auxCase2==1)
+                    if (auxCase1==0 && auxCase2==0)
                     {
                         funcionSuma(numeroA, numeroB,&suma);
                         funcionResta(numeroA, numeroB,&resta);
@@ -61,6 +55,8 @@ int main()
                         funcionFactorial(&numeroA,&factorialA);
                         funcionFactorial(&numeroB, &factorialB);
                         printf("\n\nProceso realizado\n");
+                        auxCase1=2;
+                        auxCase2=2;
                     }
                     else
                     {
@@ -72,7 +68,7 @@ int main()
                     break;
                 case 4:
 
-                    if(auxCase1==1 && auxCase2==1)
+                    if(auxCase1==2 && auxCase2==2)
                     {
                          //SUMA
                         printf("\nLa suma de %.2f + %.2f es: %.2f\n\n", numeroA, numeroB, suma);
@@ -92,6 +88,10 @@ int main()
                         //FACTORIAL
                         funcionMostrarFactorial(numeroA,factorialA);
                         funcionMostrarFactorial(numeroB,factorialB);
+                    }
+                    else if (auxCase1==0 && auxCase2==0)
+                    {
+                        printf("\nNo calculo las operaciones, porfavor en el menu ingrese el numero 3\n");
                     }
                     else
                     {
