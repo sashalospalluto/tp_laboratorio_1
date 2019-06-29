@@ -21,7 +21,7 @@ int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
 
     if(f == NULL)
     {
-        printf("Error al crear el archivo de texto\n");
+        printf("Error al abrir el archivo de texto\n");
         utn_pausa();
     }
     else
@@ -50,14 +50,14 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
     if(f==NULL)
     {
         returnRet=0;
-        printf("Problemas al crear el archivo\n");
-        utn_pausa();
+        printf("Problemas al abrir el archivo\n");
+
     }
     else{
         returnRet=1;
         returnRet= parser_EmployeeFromBinary(f , pArrayListEmployee);
         printf("Archivo de texto abierto\n");
-        utn_pausa();
+
     }
 
     return returnRet;
@@ -325,7 +325,7 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
     char nombre[100];
 
     f= fopen(path, "w");
-    if(f != NULL)
+    if(f != NULL && ll_len(pArrayListEmployee)>0)
     {
         len=ll_len(pArrayListEmployee);
         fprintf(f,"id,nombre,horasTrabajadas,Sueldo\n");
@@ -367,7 +367,7 @@ int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee)
     Employee* empleado;
     f=fopen(path, "wb");
 
-    if(f != NULL)
+    if(f != NULL && ll_len(pArrayListEmployee))
     {
         len= ll_len(pArrayListEmployee);
         for(i=0;i<len;i++)

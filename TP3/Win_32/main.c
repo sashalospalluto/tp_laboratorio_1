@@ -34,7 +34,7 @@ int main()
                 utn_pausa();
                 break;
             case 2:
-                controller_loadFromBinary("data.csv",listaEmpleados);
+                controller_loadFromBinary("data.bin",listaEmpleados);
                 utn_pausa();
                 break;
             case 3:
@@ -57,11 +57,11 @@ int main()
                 controller_sortEmployee(listaEmpleados);
                 break;
             case 8:
-                controller_saveAsText("data.csv" , listaEmpleados);
+                controller_saveAsText("data.cvs" , listaEmpleados);
                 utn_pausa();
                 break;
             case 9:
-                controller_saveAsBinary("dataBin.bin" , listaEmpleados);
+                controller_saveAsBinary("data.bin" , listaEmpleados);
                 utn_pausa();
                 break;
             case 10: //salir

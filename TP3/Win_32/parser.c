@@ -53,7 +53,7 @@ int parser_EmployeeFromBinary(FILE* pFile , LinkedList* pArrayListEmployee)
     int retorno =0;
     Employee empleado;
     Employee* pEmpleado;
-    char nombre[100];
+//    char nombre[100];
     char id[100];
     char sueldo[100];
     char horasTrabajadas[100];
@@ -72,11 +72,12 @@ int parser_EmployeeFromBinary(FILE* pFile , LinkedList* pArrayListEmployee)
                 }
                 else
                 {
-                    scanf(id,"%d",empleado.id);
-                    scanf(horasTrabajadas, "%d",empleado.horasTrabajadas);
-                    scanf(sueldo,"%d",empleado.sueldo);
 
-                    pEmpleado = employee_newParametros(id, nombre,horasTrabajadas,sueldo);
+                    sprintf(id,"%d",empleado.id);
+                    sprintf(horasTrabajadas, "%d",empleado.horasTrabajadas);
+                    sprintf(sueldo,"%d",empleado.sueldo);
+
+                    pEmpleado = employee_newParametros(id, empleado.nombre ,horasTrabajadas,sueldo);
                     ll_add(pArrayListEmployee, pEmpleado);
                 }
             }

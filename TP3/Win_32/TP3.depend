@@ -100,3 +100,50 @@
 	<ctype.h>
 	"utn.h"
 
+1561814253 source:c:\users\alejandro\desktop\tp_laboratorio_1\tp3\win_32\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+	"utn.h"
+
+1561814253 c:\users\alejandro\desktop\tp_laboratorio_1\tp3\win_32\employee.h
+	"LinkedList.h"
+
+1561814253 c:\users\alejandro\desktop\tp_laboratorio_1\tp3\win_32\linkedlist.h
+
+1561814253 c:\users\alejandro\desktop\tp_laboratorio_1\tp3\win_32\utn.h
+
+1561816720 source:c:\users\alejandro\desktop\tp_laboratorio_1\tp3\win_32\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"utn.h"
+
+1561814253 c:\users\alejandro\desktop\tp_laboratorio_1\tp3\win_32\controller.h
+
+1561816586 source:c:\users\alejandro\desktop\tp_laboratorio_1\tp3\win_32\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1561814253 source:c:\users\alejandro\desktop\tp_laboratorio_1\tp3\win_32\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
+1561816100 source:c:\users\alejandro\desktop\tp_laboratorio_1\tp3\win_32\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"utn.h"
+
+1561814253 c:\users\alejandro\desktop\tp_laboratorio_1\tp3\win_32\parser.h
+
