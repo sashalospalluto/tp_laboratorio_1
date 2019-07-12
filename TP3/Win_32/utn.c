@@ -113,14 +113,14 @@ int utn_getUnsignedInt(  char* msg,char* msgError,int minSize,int maxSize,int mi
 
     if(msg!=NULL && msgError!=NULL && minSize<maxSize && min<max && reintentos>=0 && input!=NULL)
     {
+        printf("\nEntraaa1");
         do
         {
             if(!getString(msg,msgError,minSize,maxSize,&reintentos,bufferStr)) //==0 sin errores !0
             {
-                if(isValidNumber(bufferStr)==1)
+                if(isValidNumber(bufferStr)==0)
                 {
                     auxInput=atoi(bufferStr);
-
                     if(auxInput>=min && auxInput<=max)
                     {
                         *input=atoi(bufferStr);     // unsigned long int strtoul(const char *str, char **end, int base)?

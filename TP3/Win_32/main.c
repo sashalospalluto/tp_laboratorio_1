@@ -24,6 +24,7 @@ int main()
 {
     int option = 0;
     LinkedList* listaEmpleados = ll_newLinkedList();
+    int idContador=1000;
 
     do{
         option = menu();
@@ -31,14 +32,13 @@ int main()
         {
             case 1:
                 controller_loadFromText("data.csv",listaEmpleados);
-                utn_pausa();
                 break;
             case 2:
                 controller_loadFromBinary("data.bin",listaEmpleados);
                 utn_pausa();
                 break;
             case 3:
-                controller_addEmployee(listaEmpleados);
+                controller_addEmployee(listaEmpleados,&idContador);
                 utn_pausa();
                 break;
             case 4:

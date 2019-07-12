@@ -70,7 +70,7 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
  * \return int
  *
  */
-int controller_addEmployee(LinkedList* pArrayListEmployee)
+int controller_addEmployee(LinkedList* pArrayListEmployee, int* contadorID)
 {
     Employee* empleadoNuevo;
     int returnRet=-1;
@@ -80,14 +80,17 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
     char sueldoS [100];
     char horasTrabajadasS[100];
 
-    if(utn_getUnsignedInt("\ningrese un ID: ","error, vuelva a intentar (1-99999)",1,6,1,99999,3,&id)==0 &&
+    if(
        utn_getUnsignedInt("\nIngrese el sueldo: ","error, vuelva a intentar",1,7,1,1000000,3,&sueldo)==0 &&
-       utn_getUnsignedInt("\nIngrese la cantidad de horas trabajadas: ","error, vuelva a intentar",1,7,1,999999,3,&horasTrabajadas)==0 &&
+       utn_getUnsignedInt("\nIngrese la cantidad de horas trabajadas: ","error, vuelva a intentar",1,sizeof(int),1,999999,3,&horasTrabajadas)==0 &&
        utn_getName("\nIngrese el nombre del empleado: ","error, vuelva a intentar",0,100,3,nombre)==0)
     {
-        sprintf(idS,"%d",id);
+       // sprintf(idS,"%d",id);
         sprintf(sueldoS,"%d",sueldo);
         sprintf(horasTrabajadasS,"%d",horasTrabajadas);
+        (*contadorID)++;
+         id=*contadorID;
+         sprintf(idS,"%d",id);
 
         empleadoNuevo = employee_newParametros(idS,nombre,horasTrabajadasS,sueldoS);
         ll_add(pArrayListEmployee, empleadoNuevo);
